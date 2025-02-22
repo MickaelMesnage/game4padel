@@ -8,11 +8,6 @@ export const getPadelLevel = ({
   const maxScore = totalQuestions * 2;
   const ratio = score / maxScore;
   const level = Math.max(1, Math.min(6, Math.round(ratio * 6))); // Niveau entre 1 et 6
-  const stringifiedLevel = level.toString();
 
-  if (!["1", "2", "3", "4", "5", "6"].includes(stringifiedLevel)) {
-    throw new Error(`Invalid level: ${stringifiedLevel}`);
-  }
-
-  return stringifiedLevel as "1" | "2" | "3" | "4" | "5" | "6";
+  return level.toString() as "1" | "2" | "3" | "4" | "5" | "6";
 };
