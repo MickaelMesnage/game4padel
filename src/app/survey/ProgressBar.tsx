@@ -8,5 +8,11 @@ export const ProgressBar = () => {
   const { currentQuestionIndex } = useAnswersStore();
   const progress = (currentQuestionIndex / allQuestions.length) * 100;
 
-  return <Progress value={progress} className="h-2" />;
+  return (
+    <Progress
+      aria-label="Progression du questionnaire"
+      value={progress}
+      className="h-2"
+    />
+  );
 };

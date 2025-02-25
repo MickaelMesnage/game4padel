@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "optim-start": "next build && ANALYZE=true next start"
   },
   "dependencies": {
     "@radix-ui/react-progress": "^1.1.2",

@@ -20,7 +20,7 @@ export const Result = () => {
 
   const level = levels[padelLevel];
 
-  if (!level) throw new Error("padelLevel not consistent");
+  if (!level) return null;
 
   return <LevelCard {...level} />;
 };
