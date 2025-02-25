@@ -1,5 +1,7 @@
 "use client";
 
+import { LevelCard } from "@/app/home/LevelCard";
+import { levels } from "@/app/home/levels";
 import { getPadelLevel } from "@/app/survey-results/getPadelLevel";
 import { useAnswersStore } from "@/app/survey/useAnswersStore";
 
@@ -11,10 +13,14 @@ export const Result = () => {
     0
   );
 
-  const level = getPadelLevel({
+  const padelLevel = getPadelLevel({
     score: acc,
     totalQuestions: Object.keys(answers).length,
   });
 
-  return <div>Ton niveau: {level}</div>;
+  const level = levels[padelLevel];
+
+  if (!level) throw new Error("padelLevel not consistent");
+
+  return <LevelCard {...level} />;
 };
